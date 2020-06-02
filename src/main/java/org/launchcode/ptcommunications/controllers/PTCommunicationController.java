@@ -37,7 +37,7 @@ public class PTCommunicationController {
         columnChoices.put("name", "Name");
         columnChoices.put("grade", "Grade");
         columnChoices.put("gender", "Gender");
-        columnChoices.put("age", "Age");
+
         model.addAttribute("columns", columnChoices);
         return "listOfStudent";
     }
@@ -58,7 +58,7 @@ public class PTCommunicationController {
         columnChoices.put("name", "Name");
         columnChoices.put("grade", "Grade");
         columnChoices.put("gender", "Gender");
-        columnChoices.put("age", "Age");
+
         model.addAttribute("columns", columnChoices);
         return "listOfStudent";
     }

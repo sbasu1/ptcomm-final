@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/techjobs.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
     <meta charset="UTF-8">
     <title>Add Student</title>
 </head>
-<body>
-<form method="post">
+<body class="container  body-content">
+<form method="post" style="max-width:600px;">
     <div class="form-group">
         <label>Name
             <input class="form-control" th:field="${student.name}" />
