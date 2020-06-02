@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+
+</head>
+
+<body class="container">
+<div>
+    <div class="container body-content">
+        <form th:action="@{/saveComment}" method = "post">
+        <p th:text="${'Name: ' + student.name}"></p>
+        <p>
+            Grade:
+        <p th:text="${'Grade: ' + student.grade}"></p>
+        </p>
+        <p>
+            Gender:
+        <p th:text="${'Gender: ' + student.gender}"></p>
+        </p>
+        <p>
+            Comments:
+            <ul th:each="comment : ${student.commentList}">
+                <li>
+        <p th:text="${'Comment: ' + comment.comment}"></p>
+        </li>
+        </ul>
+        </p>
+            <div class="form-group">
+
+                <input type="hidden" name="studentId" th:field="${student.id}" />
+                <label th:for="name">Comment</label>
+                <input type="text" name="comment"/>
+
+            </div>
+            <input type="submit" value="Add Comment" />
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

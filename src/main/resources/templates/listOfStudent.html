@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+
+</head>
+
+<body class="container">
+<div>
+
+    <p> <a href="/addStudent">Add new Student</a></p>
+    <form th:action="@{/searchStudent}" method = "post">
+        <h2>Search by:</h2>
+
+        <p>
+            <span th:each="column : ${columns}">
+                <input
+                        type="radio"
+                        name="searchType"
+                        th:id="${column.key}"
+                        th:value="${column.key}"
+                        th:checked="${column.key == 'all'}"/>
+                <label th:for="${column.key}" th:text="${column.value}"></label>
+            </span>
+
+        </p>
+
+        <p>
+            <label for="searchTerm">Keyword:</label>
+            <input type="text" name="searchTerm" id="searchTerm" />
+        </p>
+
+        <input type="submit" value="Search" />
+    </form>
+
+</div>
+<div class="container body-content">
+
+    <h1>All Students</h1>
+
+    <table class="job-listing">
+        <tr th:each="student : ${allStudents}">
+            <td>
+                <p>
+                    <a th:href="@{'/addComments?studentId='+ ${student.id}}" >Add comments</a>
+                </p>
+                <p th:text="${'Name: ' + student.name}"></p>
+                <p>
+                    Grade:
+                         <p th:text="${student.grade}"></p>
+                </p>
+                <p>
+                    Gender:
+                <p th:text="${ student.gender}"></p>
+                </p>
+                <p>
+                    Comments:
+                <ul th:each="comment : ${student.commentList}">
+                    <li>
+                         <p th:text="${ comment.comment}"></p>
+                    </li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+</head>
+<body>
+<form method="post">
+    <div class="form-group">
+        <label>Name
+            <input class="form-control" th:field="${student.name}" />
+        </label>
+        <p class="error" th:errors="${student.name}"></p>
+    </div>
+    <div class="form-group">
+        <label>Gender
+            <input class="form-control" th:field="${student.gender}"/>
+        </label>
+        <p class="error" th:errors="${student.gender}"></p>
+    </div>
+    </div>
+    <div class="form-group">
+        <label>Grade
+            <input class="form-control" th:field="${student.grade}"/>
+        </label>
+        <p class="error" th:errors="${student.grade}"></p>
+    </div>
+    <div class="form-group">
+        <label>Primary Contact Name
+            <input class="form-control" th:field="${student.PrimaryContactName}"/>
+        </label>
+        <p class="error" th:errors="${student.PrimaryContactName}"></p>
+    </div>
+    <div class="form-group">
+        <label>Contact Number
+            <input class="form-control" th:field="${student.ContactNumber}"/>
+        </label>
+        <p class="error" th:errors="${student.ContactNumber}"></p>
+    </div>
+    <div class="form-group">
+        <label>Home Address
+            <input class="form-control" th:field="${student.HomeAddress}"/>
+        </label>
+        <p class="error" th:errors="${student.HomeAddress}"></p>
+    </div>
+        <div class="form-group">
+        <label>Email
+            <input class="form-control" th:field="${student.email}"/>
+        </label>
+        <p class="error" th:errors="${student.email}"></p>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Save New Student" />
+</form>
+</body>
+</html>
