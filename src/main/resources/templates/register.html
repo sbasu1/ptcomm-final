@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head></head>
+<head>
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/techjobs.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+</head>
 <body class="container">
 
-
-
+<div class="container body-content">
+    <p>
+        <a th:href="@{'/backtologin'}" >Back</a>
+    </p>
 <form method="post">
     <div class="form-group">
         <label>Username
@@ -26,6 +32,6 @@
 
     <input type="submit" class="btn btn-primary" value="Register" />
 </form>
-
+</div>
 </body>
 </html>

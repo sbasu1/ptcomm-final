@@ -27,6 +27,9 @@ public class PTCommunicationController {
     @Autowired
     CommentRepository commentRepository;
 
+
+
+
     @GetMapping("/ptcomm")
     public String displayListOfStudents(Model model){
         Iterable<Student> students;
@@ -62,6 +65,7 @@ public class PTCommunicationController {
         model.addAttribute("columns", columnChoices);
         return "listOfStudent";
     }
+
 
 
     @GetMapping("/addStudent")
@@ -112,6 +116,19 @@ public class PTCommunicationController {
             }
         }
         return results;
+    }
+
+    @GetMapping("/back")
+    public String rateHandler(HttpServletRequest request) {
+        //your controller code
+        String referer = request.getHeader("Referer");
+        return "redirect:/ptcomm";
+    }
+    @GetMapping("/backtologin")
+    public String backToLogIn(HttpServletRequest request) {
+        //your controller code
+        String referer = request.getHeader("Referer");
+        return "redirect:/login";
     }
 
     public static String getFieldValue(Student student, String searchType){

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <link href="/css/bootstrap.css" rel="stylesheet" />
-    <link href="/css/techjobs.css" rel="stylesheet" />
-    <script type="text/javascript" src="/js/bootstrap.js"></script>
+<head th:replace="fragments :: head">
+
 </head>
 
 <body class="container">
+<header th:replace="fragments :: header"></header>
 <div class="container body-content">
 
 
@@ -43,19 +42,11 @@
         <tr th:each="student : ${allStudents}">
             <td>
                 <p>
-                    <a th:href="@{'/addComments?studentId='+ ${student.id}}" >Add comments</a>
+                    <a th:href="@{'/addComments?studentId='+ ${student.id}}" >View/Add comments</a>
                 </p>
                 <p th:text="${'Name: ' + student.name}"></p>
                 <p th:text="${'Grade: ' + student.grade}"></p>
                 <p th:text="${'Gender: ' + student.gender}"></p>
-                <p>
-                    Comments:
-                <ul th:each="comment : ${student.commentList}">
-                    <li>
-                         <p th:text="${ comment.comment}"></p>
-                    </li>
-                </ul>
-                </p>
             </td>
         </tr>
     </table>
